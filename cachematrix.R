@@ -28,13 +28,13 @@ list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
 
-  inv <- x$getinverse()
-  if(!is.null(inv)) {
+  inv.data <- x$getinverse()
+  if(!is.null(inv.data)) {
     message("getting cached data.")
-    return(inv)
+    return(inv.data)
   }
   data <- x$get()
   inv <- solve(data)
-  x$setinverse(inv)
-  inv
+  x$setinverse(inv.data)
+  inv.data
 }
