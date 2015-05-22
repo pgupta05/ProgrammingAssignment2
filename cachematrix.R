@@ -38,3 +38,28 @@ cacheSolve <- function(x, ...) {
   x$setinverse(inv.data)
   inv.data
 }
+
+## Sample Run
+#> x = rbind(c(1, 5/8), c(5/8, 1))
+#> mInv <- makeCacheMatrix(x)
+#> mInv$get
+#function() x
+#<environment: 0x0000000007625a70>
+#> cacheSolv(mInv)
+#Error: could not find function "cacheSolv"
+#> cacheSolve(mInv)
+#          [,1]      [,2]
+#[1,]  1.641026 -1.025641
+#[2,] -1.025641  1.641026
+#> cacheSolv(mInv)
+#Error: could not find function "cacheSolv"
+#> cacheSolve(mInv)
+#getting cached data.
+#          [,1]      [,2]
+#[1,]  1.641026 -1.025641
+#[2,] -1.025641  1.641026
+#> mInv$get()
+#      [,1]  [,2]
+#[1,] 1.000 0.625
+#[2,] 0.625 1.000
+#> 
